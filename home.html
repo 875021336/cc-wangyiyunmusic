@@ -15,7 +15,7 @@
   </main>
   <script>
     var xhr = new XMLHttpRequest()
-    xhr.open('GET','/wangyiyunmusic/cate.json',true)
+    xhr.open('GET','/cc-wangyiyunmusic/cate.json',true)
     xhr.send()
     xhr.oload = function(){
       render(JSON.parse(xhr.responseText))
