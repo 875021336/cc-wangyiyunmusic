@@ -1,0 +1,33 @@
+<!doctype html>
+<head>
+  <style>
+    .cate .item {
+      border: 1px solid #ccc;
+      line-height: 20px;
+      padding: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <header></header>
+  <main>
+    <div class="cate"></div>
+  </main>
+  <script>
+    var xhr = new XMLHttpRequest()
+    xhr.open('GET','/wangyiyunmusic/cate.json',true)
+    xhr.send()
+    xhr.oload = function(){
+      render(JSON.parse(xhr.responseText))
+    }
+    
+    function render(cateData){
+      for(var i = 0; i < cateDate.length; i++){
+        var node = document.creatElement('div')
+        node.classList.add('item')
+        node.innerText = cateData[i]
+        document.querySelector('.cate').appendChild(node)
+      }
+    }
+  </script>
+</body>
